@@ -27,6 +27,15 @@
             android:key="pref_start_url"
             android:summary="@string/pref_startUrl_summ"
             android:title="@string/pref_startUrl" />
+        <EditTextPreference
+            android:key="pref_daydream_url"
+            android:summary="@string/pref_daydream_startUrl_summ"
+            android:title="@string/pref_daydream_startUrl" />
+        <CheckBoxPreference
+            android:key="pref_daydream_interactive"
+            android:defaultValue="false"
+            android:summary="@string/pref_daydream_interactive_summ"
+            android:title="@string/pref_daydream_interactive" />
         <CheckBoxPreference
             android:key="pref_track_browser_connection"
             android:defaultValue="false"

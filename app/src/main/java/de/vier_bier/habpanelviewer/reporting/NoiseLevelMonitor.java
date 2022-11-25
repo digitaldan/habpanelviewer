@@ -120,7 +120,7 @@ public class NoiseLevelMonitor implements IDeviceMonitor, IStateUpdateListener {
                         while (isRunning.get()) {
                             try {
                                 isRunning.wait(mNoiseLevelInterval * 1000);
-                            } catch (InterruptedException e) {
+                            } catch (InterruptedException | IllegalStateException e) {
                                 // okay
                                 Thread.currentThread().interrupt();
                             }

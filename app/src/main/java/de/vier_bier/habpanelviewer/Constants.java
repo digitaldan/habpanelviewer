@@ -54,6 +54,8 @@ public final class Constants {
     public static final String PREF_HW_ACCELERATED = "pref_hardware_accelerated";
     public static final String PREF_APP_VERSION = "pref_app_version";
     public static final String PREF_START_URL = "pref_start_url";
+    public static final String PREF_DAYDREAM_URL = "pref_daydream_url";
+    public static final String PREF_DAYDREAM_INTERACTIVE = "pref_daydream_interactive";
     public static final String PREF_POWER_SAVE_WARNING_SHOWN = "pref_powerSavingWarningShown";
     public static final String PREF_INTRO_SHOWN = "pref_intro_shown";
     public static final String PREF_MENU_POSITION = "pref_menu_position";

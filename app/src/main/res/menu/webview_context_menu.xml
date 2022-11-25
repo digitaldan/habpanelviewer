@@ -22,6 +22,10 @@
         android:title="@string/menu_setStartUrl"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/menu_set_daydream_url"
+        android:title="@string/menu_setDaydreamUrl"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/menu_clear_credentials"
         android:title="@string/menu_clearCredentials"
         app:showAsAction="ifRoom" />

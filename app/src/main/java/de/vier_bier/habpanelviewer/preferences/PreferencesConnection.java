@@ -20,6 +20,9 @@ public class PreferencesConnection extends PreferenceFragment {
 
         EditTextPreference urlPreference = (EditTextPreference) findPreference(Constants.PREF_SERVER_URL);
         urlPreference.setOnPreferenceChangeListener(new URLValidatingListener());
+
+        urlPreference = (EditTextPreference) findPreference(Constants.PREF_DAYDREAM_URL);
+        urlPreference.setOnPreferenceChangeListener(new URLValidatingListener());
     }
 
     private class URLValidatingListener implements Preference.OnPreferenceChangeListener {

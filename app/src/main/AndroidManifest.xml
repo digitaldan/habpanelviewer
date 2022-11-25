@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
@@ -111,6 +110,18 @@
             android:screenOrientation="portrait"/>
 
         <service android:name="de.vier_bier.habpanelviewer.TrackShutdownService" android:stopWithTask="false" />
+        <service
+            android:name="de.vier_bier.habpanelviewer.WebDreamService"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/web_dream_label"
+            android:permission="android.permission.BIND_DREAM_SERVICE">
+
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

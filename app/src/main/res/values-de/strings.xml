@@ -48,6 +48,7 @@
     <string name="menu_gotoStartUrl">Gehe zur Startseite</string>
     <string name="menu_gotoUrl">Gehe zu Webseite…</string>
     <string name="menu_setStartUrl">Als Startseite setzen</string>
+    <string name="menu_setDaydreamUrl">Set as daydream page</string>
     <string name="menu_clearCredentials">Zugangsdaten löschen</string>
     <string name="menu_clearCache">Cache leeren</string>
     <string name="menu_toggleKiosk">Kiosk Modus umschalten</string>
@@ -56,6 +57,10 @@
     <string name="pref_url_summ">Die URL des openHAB Servers. Um den Server zu suchen benutze das Hauptmenü.</string>
     <string name="pref_startUrl">Startseite</string>
     <string name="pref_startUrl_summ">Die Webseite, die beim Start gezeigt werden soll. Falls leer, wird die openHAB URL als Startseite benutzt</string>
+    <string name="pref_daydream_startUrl">Daydream Startseite</string>
+    <string name="pref_daydream_startUrl_summ">Die Webseite, die beim Start gezeigt werden soll. Falls leer, wird die openHAB URL als Startseite benutzt</string>
+    <string name="pref_daydream_interactive">Daydream Interactive</string>
+    <string name="pref_daydream_interactive_summ">Toggle interactive mode for daydream, useful if interacting with page is required (e.g. setting website preferences)</string>
     <string name="pref_trackBrowserConnection">Überwache Browser Verbindung</string>
     <string name="pref_trackBrowserConnection_summ">Verbindet erneut mit openHAB, wenn der Browser die SSE Verbindung verliert</string>
     <string name="pref_openHabVersion">openHAB Version</string>

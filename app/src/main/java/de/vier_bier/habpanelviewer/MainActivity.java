@@ -18,12 +18,14 @@ import android.hardware.camera2.CameraManager;
 import android.media.AudioManager;
 import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -456,6 +458,11 @@ public class MainActivity extends ScreenControllingActivity
             SharedPreferences.Editor editor1 = prefs.edit();
             editor1.putString(Constants.PREF_START_URL, mWebView.getUrl());
             editor1.apply();
+        } else if (itemId == R.id.menu_set_daydream_url) {
+            final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            SharedPreferences.Editor editor1 = prefs.edit();
+            editor1.putString(Constants.PREF_DAYDREAM_URL, mWebView.getUrl());
+            editor1.apply();
         } else if (itemId == R.id.menu_clear_credentials) {
             CredentialManager.getInstance().clearCredentials();
             UiUtil.showSnackBar(mWebView, R.string.credentialsCleared, R.string.action_restart, view -> restartApp());
@@ -732,7 +739,7 @@ public class MainActivity extends ScreenControllingActivity
         } else if (mWebView.canGoBack()) {
             mWebView.goBack();
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
         }
     }
 

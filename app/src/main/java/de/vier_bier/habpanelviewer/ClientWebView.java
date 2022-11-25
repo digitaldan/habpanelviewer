@@ -48,6 +48,7 @@ public class ClientWebView extends WebView implements NetworkTracker.INetworkLis
     private boolean mDraggingPrevented;
     private String mServerURL;
     private String mStartPage;
+    private String mStartPageKey;
     private boolean mKioskMode;
     private boolean mHwAccelerated;
     private NetworkTracker mNetworkTracker;
@@ -91,7 +92,12 @@ public class ClientWebView extends WebView implements NetworkTracker.INetworkLis
         }
     }
 
-    synchronized void initialize(final ISseConnectionListener cl, IUrlListener ul, final NetworkTracker nt) {
+    synchronized void initialize(final ISseConnectionListener cl, IUrlListener ul, final NetworkTracker nt){
+        initialize(null, cl, ul, nt);
+    }
+
+    synchronized void initialize(String startPageKey, final ISseConnectionListener cl, IUrlListener ul, final NetworkTracker nt) {
+        mStartPageKey = startPageKey != null ? startPageKey : Constants.PREF_START_URL;
         mNetworkTracker = nt;
         Log.d(TAG, "registering as network listener...");
         mNetworkTracker.addListener(this);
@@ -277,8 +283,9 @@ public class ClientWebView extends WebView implements NetworkTracker.INetworkLis
 
         boolean loadStartUrl = false;
         boolean reloadUrl = false;
-        if (mStartPage == null || !mStartPage.equalsIgnoreCase(prefs.getString(Constants.PREF_START_URL, ""))) {
-            mStartPage = prefs.getString(Constants.PREF_START_URL, "");
+
+        if (mStartPage == null || !mStartPage.equalsIgnoreCase(prefs.getString(mStartPageKey, ""))) {
+            mStartPage = prefs.getString(mStartPageKey, "");
             loadStartUrl = true;
         }
         loadStartUrl = loadStartUrl || isShowingErrorPage();

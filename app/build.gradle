@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
     defaultConfig {
         applicationId "de.vier_bier.habpanelviewer"
+        compileSdkVersion 33
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 10
         versionName "0.9.27"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -28,6 +28,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    namespace 'de.vier_bier.habpanelviewer'
 }
 
 gradle.projectsEvaluated {
@@ -41,7 +42,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    def room_version = "2.3.0"
+    def room_version = "2.4.2"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
